@@ -1,2 +1,10 @@
-# Implement a class to hold room information. This should have name and
-# description attributes.
+
+class Room:
+    def __init__(self, name, description, inventory, obstacle):
+        self.name = name
+        self.description = description
+        self.inventory = inventory
+        self.obstacle = obstacle
+
+    def destroyObstacle(self):
+        self.obstacle.pop()
