@@ -96,17 +96,17 @@ while not is_game_over:
                         print('Direction unavailable')
                 elif what == 'e':
                     try:
-                        rand.current_room.e_to
+                        rand.current_room = rand.current_room.e_to
                     except:
                         print('Direction unavailable')
                 elif what == 's':
                     try:
-                        rand.current_room.s_to
+                        rand.current_room = rand.current_room.s_to
                     except:
                         print('Direction unavailable')
                 elif what == 'w':
                     try:
-                        rand.current_room.w_to
+                        rand.current_room = rand.current_room.w_to
                     except:
                         print('Direction unavailable')
             elif rand.current_room.obstacle:
