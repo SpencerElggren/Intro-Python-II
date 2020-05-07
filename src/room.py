@@ -1,12 +1,10 @@
 
 class Room:
-    def __init__(self, name, description, inventory):
+    def __init__(self, name, description, inventory, obstacle):
         self.name = name
         self.description = description
         self.inventory = inventory
+        self.obstacle = obstacle
 
-    def gainItem(self, item):
-        self.inventory.append(item)
-
-    def loseItem(self, item):
-        self.inventory.remove(item)
+    def destroyObstacle(self):
+        self.obstacle.pop()

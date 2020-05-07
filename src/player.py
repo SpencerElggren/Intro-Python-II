@@ -10,8 +10,17 @@ class Player:
         self.money = money
         self.inventory = inventory
 
-    def pickUpItem(self, item):
+    def pickUpItem(self, item, room):
         self.inventory.append(item)
+        room.inventory.remove(item)
+        print(f"{item} picked up")
 
-    def dropItem(self, item):
+    def dropItem(self, item, room):
         self.inventory.remove(item)
+        room.inventory.append(item)
+        print(f"{item} dropped")
+
+    def checkInv(self, items):
+        print(f"Money: {self.money}")
+        for i in self.inventory:
+            print(items[i].name + ', ' + items[i].description)

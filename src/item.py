@@ -7,16 +7,30 @@ class Item:
     def __str__(self):
         print(self.name + ', ' + self.description)
 
-    def on_take(self, item):
-        print("You have picked up " + item)
-
 
 class Treasure(Item):
     def __init__(self, name, description, worth):
-        super(name, description)
+        super().__init__(name, description)
         self.worth = worth
 
     def sell(self, item, player):
         player.money += self.worth
         player.inventory.remove(item)
 
+
+class Utility(Item):
+    def __init__(self, name, description, use, durability):
+        super().__init__(name, description)
+        self.use = use
+        self.durability = durability
+
+    def use(self, room):
+        self.durability -= 1
+        room.obstacle.pop()
+
+
+class Weapon(Item):
+    def __init__(self, name, description, speed, damage):
+        super().__init__(name, description)
+        self.speed = speed
+        self.damage = damage
